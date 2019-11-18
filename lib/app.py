@@ -32,10 +32,10 @@ class Workshop:
         self.students = []
     
     def add_participant(self, val):
-        if isinstance(val, Student):
+        if val.__class__.__name__ == "Student":
             self.students.append(val)
             print(f"{val.full_name} added to Students")
-        elif isinstance(val, Instructor):
+        elif val.__class__.__name__ == "Instructor":
             self.instructors.append(val)
             print(f"{val.full_name} added to Instructors")
         else:
